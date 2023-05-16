@@ -4,22 +4,22 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                powershell -File cicd/Build.ps1
+                powershell '.\\cicd\\Build.ps1'
             }
         }
         stage ('Test') {
             steps {
-                powershell -File cicd/Test.ps1
+                powershell '.\\cicd\\Test.ps1'
             }
         }
         stage ('Archive') {
             steps {
-                powershell -File cicd/Archive.ps1
+                powershell '.\\cicd\\Archive.ps1'
             }
         }
         stage ('Deploy') {
             steps {
-                powershell -File cicd/Deploy.ps1
+                powershell '.\\cicd\\Deploy.ps1'
             }
         }
     }
